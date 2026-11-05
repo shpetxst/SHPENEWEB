@@ -81,12 +81,12 @@ export function validateNetId(netIdOrEmail: string): {
     };
   }
 
-  if (cleaned.length < 3 || cleaned.length > 10) {
+  if (!cleaned) {
     return {
       isValid: false,
-      cleanedNetId: cleaned,
-      universityEmail: `${cleaned}@txstate.edu`,
-      error: 'Please enter a valid Texas State NetID (e.g. abc12).',
+      cleanedNetId: '',
+      universityEmail: '',
+      error: 'Please enter a valid NetID.',
     };
   }
 
