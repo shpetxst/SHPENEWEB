@@ -142,10 +142,10 @@ export const AdminScanner: React.FC = () => {
         targetUid = rawText.trim();
       }
 
-      // If input looks like NetID (5 chars), query user by NetID or studentId
+      // If input looks like NetID or targetNetId is provided, query user by NetID
       let resolvedMember: UserProfile | null = null;
-      if (targetNetId || targetUid.length === 5) {
-        const netIdToSearch = (targetNetId || targetUid).toLowerCase();
+      const netIdToSearch = (targetNetId || targetUid).toLowerCase();
+      if (netIdToSearch) {
         const usersRef = collection(db, 'users');
         const q = query(usersRef, where('netid', '==', netIdToSearch));
         const snap = await getDocs(q);
@@ -816,7 +816,7 @@ export const AdminScanner: React.FC = () => {
                 </div>
                 <h4 className="text-sm font-extrabold text-gray-800">Scanner Ready</h4>
                 <p className="text-xs text-gray-500 max-w-sm mx-auto leading-relaxed">
-                  Hold a student's digital member QR code up to the camera or type their 5-character NetID below to award merit points.
+                  Hold a student's digital member QR code up to the camera or type their NetID below to award merit points.
                 </p>
               </div>
             )}

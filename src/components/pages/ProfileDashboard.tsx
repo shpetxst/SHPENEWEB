@@ -534,7 +534,7 @@ export const ProfileDashboard: React.FC = () => {
               Member Sign In
             </h1>
             <p className="text-sm text-gray-500 mt-2 max-w-md mx-auto">
-              Sign in with your Google Account, then enter your 5-character Texas State NetID to verify your student email.
+              Sign in with your Google Account, then enter your Texas State NetID to verify your student email.
             </p>
           </div>
 
@@ -544,7 +544,7 @@ export const ProfileDashboard: React.FC = () => {
               <span>Texas State NetID Student Verification</span>
             </div>
             <p className="text-gray-600">
-              You can log in initially with your Google account. Right after login, enter your 5-character NetID to receive a secure 6-digit verification code sent to your official <code className="bg-white px-1 py-0.5 rounded text-primary-700 font-bold font-mono">@txstate.edu</code> inbox.
+              You can log in initially with your Google account. Right after login, enter your NetID to receive a secure 6-digit verification code sent to your official <code className="bg-white px-1 py-0.5 rounded text-primary-700 font-bold font-mono">@txstate.edu</code> inbox.
             </p>
           </div>
 
@@ -776,7 +776,7 @@ export const ProfileDashboard: React.FC = () => {
                       Enter Your Texas State NetID or Email *
                     </label>
                     <p className="text-xs text-gray-500">
-                      Please enter your 5-character university NetID (e.g. <strong className="font-mono text-primary-700">abc12</strong>) or full address (<strong className="font-mono text-primary-700">abc12@txstate.edu</strong>).
+                      Please enter your university NetID (e.g. <strong className="font-mono text-primary-700">abc12</strong>) or full address (<strong className="font-mono text-primary-700">abc12@txstate.edu</strong>).
                     </p>
 
                     <div className="relative">
