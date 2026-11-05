@@ -107,10 +107,10 @@ export const AuthModal: React.FC<AuthModalProps> = ({
   const handleModalSubmitNetId = async (e?: React.FormEvent) => {
     if (e) e.preventDefault();
     const clean = modalNetId.trim().toLowerCase();
-    if (clean.length !== 5 || !/^[a-z0-9]{5}$/i.test(clean)) {
+    if (!clean || !/^[a-z0-9]+$/i.test(clean)) {
       setModalNetIdMsg({
         type: 'error',
-        text: 'NetID must be exactly 5 alphanumeric characters (e.g. abc12).',
+        text: 'Please enter a valid alphanumeric Texas State NetID (e.g. abc12).',
       });
       return;
     }
@@ -386,7 +386,7 @@ export const AuthModal: React.FC<AuthModalProps> = ({
                             Texas State NetID Verification
                           </h5>
                           <p className="text-[11px] text-gray-600">
-                            Enter your 5-character NetID to verify your @txstate.edu account
+                            Enter your Texas State NetID to verify your @txstate.edu account
                           </p>
                         </div>
                       </div>
@@ -482,16 +482,12 @@ export const AuthModal: React.FC<AuthModalProps> = ({
                           <div>
                             <div className="flex items-center justify-between mb-1 text-[11px]">
                               <label className="font-bold text-gray-700">
-                                5-Character NetID *
+                                Texas State NetID *
                               </label>
-                              <span className="text-gray-400 font-mono text-[10px]">
-                                {modalNetId.length}/5
-                              </span>
                             </div>
                             <input
                               type="text"
                               required
-                              maxLength={5}
                               placeholder="e.g. abc12"
                               value={modalNetId}
                               onChange={(e) => setModalNetId(e.target.value.toLowerCase().replace(/[^a-z0-9]/g, ''))}
@@ -507,7 +503,7 @@ export const AuthModal: React.FC<AuthModalProps> = ({
 
                           <button
                             type="submit"
-                            disabled={modalIsSubmitting || modalNetId.trim().length !== 5}
+                            disabled={modalIsSubmitting || !modalNetId.trim()}
                             className="w-full flex items-center justify-center space-x-1.5 py-2.5 px-3 bg-primary-600 hover:bg-primary-700 text-white rounded-xl text-xs font-bold shadow-xs transition-colors disabled:opacity-50"
                           >
                             <Send className="w-3.5 h-3.5" />
