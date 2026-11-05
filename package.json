@@ -9,7 +9,7 @@
     "lint": "eslint .",
     "preview": "vite preview"
   },
-  "dependencies": {
+  "dependencies": {""
     "@emailjs/browser": "^5.0.3",
     "@splidejs/react-splide": "^0.7.12",
     "firebase": "^12.19.0",

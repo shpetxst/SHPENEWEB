@@ -245,7 +245,7 @@ export const CheckInPage: React.FC = () => {
 
               <div>
                 <label className="block font-black text-[#1A1A1A] mb-1">
-                  Texas State Email Address
+                  Google Email Address
                 </label>
                 <input
                   type="email"
