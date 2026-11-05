@@ -81,15 +81,6 @@ export function validateNetId(netIdOrEmail: string): {
     };
   }
 
-  if (!cleaned) {
-    return {
-      isValid: false,
-      cleanedNetId: '',
-      universityEmail: '',
-      error: 'Please enter a valid NetID.',
-    };
-  }
-
   return {
     isValid: true,
     cleanedNetId: cleaned,
